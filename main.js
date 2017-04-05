@@ -23,7 +23,7 @@ app.on('ready', function() {
     height: 600
   });
 
-  mainWindow.loadURL('file://' + __dirname + '/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/main.html');
 
 
 

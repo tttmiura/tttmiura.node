@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tttmiura/tttmiura.node/issues"
   },
-  "homepage": "https://github.com/tttmiura/tttmiura.node#readme"
+  "homepage": "https://github.com/tttmiura/tttmiura.node#readme",
+  "dependencies": {
+    "material-components-web": "^0.8.0"
+  }
 }
