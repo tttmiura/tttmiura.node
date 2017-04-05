@@ -25,7 +25,8 @@ app.on('ready', function() {
 
   mainWindow.loadURL('file://' + __dirname + '/main.html');
 
-
+  // Open the DevTools.
+  mainWindow.openDevTools();
 
   mainWindow.on('closed', function() {
 
