@@ -1,0 +1,5 @@
+npm -g install electron-prebuilt
+npm install -g asar
+
+asar pack . app.asar
+
