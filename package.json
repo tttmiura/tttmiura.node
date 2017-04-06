@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tttmiura/tttmiura.node#readme",
   "dependencies": {
+    "electron-prebuilt": "^1.4.13",
     "material-components-web": "^0.8.0"
   }
 }
