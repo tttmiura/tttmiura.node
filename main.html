@@ -35,7 +35,7 @@
 </main>
 <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
 <script>
-  
+  ipc = require('electron').ipcRenderer
   mdc.autoInit();
   
   var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
@@ -44,7 +44,7 @@
     drawer.open = true;
   });
   document.querySelector('#openDevBtn').addEventListener('click', function() {
-    openDev();
+    ipc.send('openDev');
   });
 </script>
 

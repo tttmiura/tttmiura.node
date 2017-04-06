@@ -6,6 +6,8 @@ var app = electron.app;
 
 var BrowserWindow = electron.BrowserWindow;
 
+var ipc = electron.ipcMain;
+
 var mainWindow = null;
 
 app.on('window-all-closed', function() {
@@ -20,7 +22,7 @@ app.on('ready', function() {
 
   mainWindow = new BrowserWindow({
     width: 800,
-    height: 600
+    height: 960
   });
 
   mainWindow.loadURL('file://' + __dirname + '/main.html');
@@ -33,9 +35,9 @@ app.on('ready', function() {
 
 });
 
-function openDev() {
+ipc.on('openDev', function() {
   if (mainWindow) {
     // Open the DevTools.
     mainWindow.openDevTools();
   }
-}
+});
