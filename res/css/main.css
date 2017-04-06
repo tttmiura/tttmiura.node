@@ -6,3 +6,7 @@ button.menuBtn {
   background: none;
   border: none;
 }
+
+.menu-header-img {
+  background-image: url(../img/140726157637_TP_V.jpg);
+}

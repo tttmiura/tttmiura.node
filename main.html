@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <title> Sample App</title>
+  <title>Sample App</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
   <link rel="stylesheet" href="res/css/main.css">
@@ -20,32 +20,23 @@
   <aside class="mdc-temporary-drawer">
     <nav class="mdc-temporary-drawer__drawer">
       <header class="mdc-temporary-drawer__header">
-        <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">MENU</div>
+        <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary menu-header-img">MENU</div>
       </header>
       <nav class="mdc-temporary-drawer__content mdc-list-group">
         <div class="mdc-list">
           <a class="mdc-list-item" href="#">
             <i class="material-icons mdc-list-item__start-detail">star</i>Star
           </a>
+          <a class="mdc-list-item openDev" href="#">
+            <i class="material-icons mdc-list-item__start-detail">build</i>開発ツール
+          </a>
         </div>
       </nav>
     </nav>
   </aside>
-  <button id="openDevBtn" type="button" class="mdc-button mdc-button--raised mdc-button--primary">Press Me</button>
+  <button type="button" class="mdc-button mdc-button--raised mdc-button--primary">Press Me</button>
 </main>
 <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
-<script>
-  ipc = require('electron').ipcRenderer
-  mdc.autoInit();
-  
-  var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
-  var drawer = new MDCTemporaryDrawer(document.querySelector('.mdc-temporary-drawer'));
-  document.querySelector('#menuBtn').addEventListener('click', function() {
-    drawer.open = true;
-  });
-  document.querySelector('#openDevBtn').addEventListener('click', function() {
-    ipc.send('openDev');
-  });
-</script>
+<script src="res/js/renderMain.js"></script>
 
 </html>
