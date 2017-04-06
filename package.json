@@ -19,7 +19,9 @@
   "homepage": "https://github.com/tttmiura/tttmiura.node#readme",
   "dependencies": {
     "electron-json-storage": "^3.0.4",
-    "electron-prebuilt": "^1.4.13",
     "material-components-web": "^0.8.0"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13"
   }
 }

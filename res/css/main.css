@@ -10,3 +10,10 @@ button.menuBtn {
 .menu-header-img {
   background-image: url(../img/140726157637_TP_V.jpg);
 }
+
+.mainContent {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+}

@@ -10,3 +10,9 @@
   document.querySelector('.openDev').addEventListener('click', function() {
     ipc.send('openDev');
   });
+
+  var dialog = new mdc.dialog.MDCDialog(document.querySelector('#testDialog'));
+  document.querySelector('#pressMeBtn').addEventListener('click', function (evt) {
+      	  dialog.lastFocusedTarget = evt.target;
+          dialog.show();
+  });

@@ -34,7 +34,25 @@
       </nav>
     </nav>
   </aside>
-  <button type="button" class="mdc-button mdc-button--raised mdc-button--primary">Press Me</button>
+  <aside id="testDialog" class="mdc-dialog" role="alertdialog" aria-hidden="true" aria-labelledby="dialog-label" aria-describedby="dialog-description">
+    <div class="mdc-dialog__surface">
+      <header class="mdc-dialog__header">
+        <h2 id="dialog-label" class="mdc-dialog__header__title">
+          Dialog TEST
+        </h2>
+      </header>
+      <section id="dialog-description" class="mdc-dialog__body">
+        Dialog TEST DESU.
+      </section>
+      <footer class="mdc-dialog__footer">
+        <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel mdc-ripple-upgraded" style="--mdc-ripple-surface-width:60px; --mdc-ripple-surface-height:21px; --mdc-ripple-fg-size:36px; --mdc-ripple-fg-scale:2.04358;" data-mdc-tabindex-handled="true" tabindex="-1">Decline</button>
+        <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept mdc-ripple-upgraded" style="--mdc-ripple-surface-width:57px; --mdc-ripple-surface-height:21px; --mdc-ripple-fg-size:34.2px; --mdc-ripple-fg-scale:2.06858;" data-mdc-tabindex-handled="true" tabindex="-1">Accept</button>
+      </footer>
+    </div>
+    <div class="mdc-dialog__backdrop"></div>
+  </aside>
+  <div contenteditable="true" class="mainContent">さて何しようか</div>
+  <button id="pressMeBtn" type="button" class="mdc-button mdc-button--raised mdc-button--primary">Press Me</button>
 </main>
 <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
 <script src="res/js/renderMain.js"></script>
