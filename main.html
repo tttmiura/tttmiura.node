@@ -1,45 +1,51 @@
-< !DOCTYPE html>
+<!DOCTYPE html>
 
-< html>
+<html>
   
-< head>
-  < meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
 
-  < title> Sample App< /title>
-  < link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
-  < link rel="stylesheet" href="res/css/main.css">
-< /head>
+  <title> Sample App</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
+  <link rel="stylesheet" href="res/css/main.css">
+</head>
 
-< main>
-  < div class="mdc-toolbar mdc-toolbar--fixed">
-    < section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-      < button id="menuBtn" class="material-icons">menu< /button>
-    < /section>
-  < /div>
-  < aside class="mdc-temporary-drawer">
-    < nav class="mdc-temporary-drawer__drawer">
-      < header class="mdc-temporary-drawer__header">
-        < div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">MENU< /div>
-      < /header>
-      < nav class="mdc-temporary-drawer__content mdc-list-group">
-        < div class="mdc-list">
-          < a class="mdc-list-item" href="#">
-            < i class="material-icons mdc-list-item__start-detail"> star< /i>Star
-          < /a>
-        < /div>
-      < /nav>
-    < /nav>
-  < /aside>
-  < button type="button" class="mdc-button mdc-button--raised mdc-button--primary">Press Me< /button>
-< /main>
-< script src="node_modules/material-components-web/dist/material-components-web.js"></script>
-< script>
+<main class="mdc-toolbar-fixed-adjust">
+  <div class="mdc-toolbar mdc-toolbar--fixed">
+    <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+      <button id="menuBtn" class="material-icons menuBtn">menu</button>
+    </section>
+  </div>
+  <aside class="mdc-temporary-drawer">
+    <nav class="mdc-temporary-drawer__drawer">
+      <header class="mdc-temporary-drawer__header">
+        <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">MENU</div>
+      </header>
+      <nav class="mdc-temporary-drawer__content mdc-list-group">
+        <div class="mdc-list">
+          <a class="mdc-list-item" href="#">
+            <i class="material-icons mdc-list-item__start-detail">star</i>Star
+          </a>
+        </div>
+      </nav>
+    </nav>
+  </aside>
+  <button id="openDevBtn" type="button" class="mdc-button mdc-button--raised mdc-button--primary">Press Me</button>
+</main>
+<script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+<script>
+  
   mdc.autoInit();
+  
   var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
   var drawer = new MDCTemporaryDrawer(document.querySelector('.mdc-temporary-drawer'));
   document.querySelector('#menuBtn').addEventListener('click', function() {
     drawer.open = true;
   });
+  document.querySelector('#openDevBtn').addEventListener('click', function() {
+    openDev();
+  });
 </script>
 
-< /html>
+</html>

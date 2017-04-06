@@ -1,3 +1,7 @@
 /* main.css */
 
 
+button.menuBtn {
+  background: none;
+  border: none;
+}
