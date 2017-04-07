@@ -4,7 +4,9 @@
   "description": "Elec TEST APP",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "env" : "npm install --production",
+    "build" : "rm ./dist/app.asar && asar pack . ./dist/app.asar"
   },
   "repository": {
     "type": "git",
