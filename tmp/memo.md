@@ -1,4 +1,4 @@
-
+備忘録
 # 環境
 
 |分類|名称|
@@ -37,3 +37,4 @@ asar pack . app.asar
  - [electron github](https://github.com/electron/electron)
  - [material-components-web](https://github.com/material-components/material-components-web)
  - [Electronでアプリケーションを作ってみよう](http://qiita.com/Quramy/items/a4be32769366cfe55778)
+ - [Electronで設定ファイルを保存する](http://qiita.com/KimuraTakaumi/items/fcae3fb9ca62143a00b4)
