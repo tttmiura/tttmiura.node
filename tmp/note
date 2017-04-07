@@ -1,8 +1,0 @@
-npm -g install electron-prebuilt
-npm install -g asar
-
-npm install --save material-components-web
-
-asar pack . app.asar
-
-npm install --production
