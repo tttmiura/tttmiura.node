@@ -2,13 +2,13 @@
 
   var ipc = require('electron').ipcRenderer
 
-  ipc.on('readedMemo', function(data) {
-    console.log(data);
-    if(Object.keys(data).length === 0) {
+  ipc.on('readedMemo', function(evt, param) {
+    console.log(param);
+    if(Object.keys(param).length === 0) {
       return;
     }
     
-    let mainContentValue = data.mainContent;
+    let mainContentValue = param.mainContent;
     document.querySelector('#mainContent').textContent = mainContentValue;
   });
 
@@ -24,9 +24,12 @@
   var dialog = new mdc.dialog.MDCDialog(document.querySelector('#testDialog'));
   document.querySelector('#pressMeBtn').addEventListener('click', function (evt) {
     let mainContentValue = document.querySelector('#mainContent').textContent;
-    let saveDate = {mainContent : mainContentValue};
-    ipc.send('saveMemo', saveDate);
+    let param = {mainContent : mainContentValue};
+    
+    ipc.send('saveMemo', param);
     
     dialog.lastFocusedTarget = evt.target;
     dialog.show();
   });
+
+  ipc.send('readMemo');

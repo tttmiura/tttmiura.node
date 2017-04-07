@@ -1,5 +1,12 @@
 'use strict';
 
+var fs = require('fs');
+
+// simple logger
+var output = fs.createWriteStream('./stdout.log');
+var errorOutput = fs.createWriteStream('./stderr.log');
+var logger = new console.Console(output, errorOutput);
+
 var electron = require('electron');
 
 var app = electron.app;
@@ -44,20 +51,25 @@ ipc.on('openDev', function() {
   }
 });
 
-ipc.on('readMemo', function() {
+ipc.on('readMemo', function(event) {
   if(storage) {
     storage.get('memo', function(error,data) {
-      if(error) throw error;
-      
-      ipc.send('readedMemo', data);
+      if(error) {
+        logger.log(error);
+        throw error;
+      }
+      event.sender.send('readedMemo', data);
     });
   }
 });
 
-ipc.on('saveMemo', function(data) {
+ipc.on('saveMemo', function(evt, param) {
   if(storage) {
-    storage.set('memo', data, function(error) {
-      if(error) throw error;
+    storage.set('memo', param, function(error) {
+      if(error) {
+        logger.log(error);
+        throw error;
+      }
     });
   }
 });
@@ -65,8 +77,8 @@ ipc.on('saveMemo', function(data) {
 storage.get('config', function (error, data) {
   if(error) throw error;
   if (Object.keys(data).length === 0) {
-    console.log('config empty');
+    logger.log('config empty');
   } else {
-    console.log(data);
+    logger.log(data);
   }
 });
