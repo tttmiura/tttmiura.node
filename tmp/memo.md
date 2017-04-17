@@ -38,3 +38,5 @@ asar pack . app.asar
  - [material-components-web](https://github.com/material-components/material-components-web)
  - [Electronでアプリケーションを作ってみよう](http://qiita.com/Quramy/items/a4be32769366cfe55778)
  - [Electronで設定ファイルを保存する](http://qiita.com/KimuraTakaumi/items/fcae3fb9ca62143a00b4)
+ - [libqi-js](https://github.com/aldebaran/libqi-js)
+
